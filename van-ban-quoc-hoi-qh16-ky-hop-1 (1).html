@@ -499,5 +499,16 @@
   <p style="margin-top:6px;font-size:11px;">Cập nhật lần cuối: tháng 6/2026 &nbsp;|&nbsp; Tất cả link đã được xác minh</p>
 </footer>
 
+<script>
+  function qh16ReportHeight() {
+    var h = document.body.scrollHeight;
+    window.parent.postMessage({ qh16FrameHeight: h }, '*');
+  }
+  window.addEventListener('load', qh16ReportHeight);
+  window.addEventListener('resize', qh16ReportHeight);
+  // Also report after fonts/images settle
+  setTimeout(qh16ReportHeight, 500);
+  setTimeout(qh16ReportHeight, 1500);
+</script>
 </body>
 </html>
